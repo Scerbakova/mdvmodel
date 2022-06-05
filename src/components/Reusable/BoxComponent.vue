@@ -3,7 +3,7 @@
     <div class="controls">
       <slot></slot>
     </div>
-    <div class="box" v-bind:style="{ backgroundColor: title }"></div>
+    <div :class="[boxClass]" v-bind:style="{ backgroundColor: color }"></div>
   </div>
 </template>
 
@@ -11,11 +11,15 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: "TitleComponent",
+  name: "BoxComponent",
   props: {
-    title: {
+    color: {
       type: String,
       default: "Blue",
+    },
+    boxClass: {
+      type: String,
+      default: "box",
     },
   },
 });
@@ -38,5 +42,8 @@ export default defineComponent({
 .controls {
   display: flex;
   gap: 40px;
+}
+.hidden {
+  visibility: hidden;
 }
 </style>

@@ -6,14 +6,14 @@
     :placeholder="placeholder"
     @input="$emit('update:modelValue', handleInputChange($event))"
   />
-  <button @click="$emit('changeTitle')">Change</button>
+  <button @click="$emit('changeProp')">Change</button>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 
 export default defineComponent({
-  emits: ["update:modelValue", "changeTitle"],
+  emits: ["update:modelValue", "changeProp"],
   name: "InputWithButton",
   data: () => {
     const handleInputChange = (event: Event) =>

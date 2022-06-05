@@ -5,6 +5,7 @@
     class="input__field"
     :placeholder="placeholder"
     @input="$emit('update:modelValue', handleInputChange($event))"
+    @change="$emit('changeProp')"
   />
 </template>
 
@@ -12,6 +13,7 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
+  name: "InputAlone",
   data: () => {
     const handleInputChange = (event: Event) =>
       (event.target as HTMLInputElement).value;
