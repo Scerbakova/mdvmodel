@@ -6,7 +6,9 @@
       v-model="colorInput"
       type="text"
     />
-    <ButtonComponent @changeProp="color = colorInput">Change</ButtonComponent>
+    <ButtonComponent @changeProp="(color = colorInput), (colorInput = '')"
+      >Change</ButtonComponent
+    >
   </div>
 </template>
 
@@ -25,7 +27,7 @@ export default defineComponent({
   },
   data: () => ({
     color: "Blue",
-    colorInput: "Blue",
+    colorInput: "",
     placeholder: "Change color...",
   }),
 });
