@@ -7,7 +7,9 @@
       type="text"
       v-focus
     />
-    <ButtonComponent @changeProp="title = titleInput">Change</ButtonComponent>
+    <ButtonComponent @changeProp="(title = titleInput), (titleInput = '')"
+      >Change</ButtonComponent
+    >
   </div>
 </template>
 
@@ -22,7 +24,7 @@ export default defineComponent({
   components: { TitleComponent, ButtonComponent, InputComponent },
   data: () => ({
     title: "Title",
-    titleInput: "Title",
+    titleInput: "",
     placeholder: "Update title...",
   }),
   directives: {

@@ -8,7 +8,9 @@
         type="text"
         v-focus
       />
-      <ButtonComponent @changeProp="title = titleInput">Change</ButtonComponent>
+      <ButtonComponent @changeProp="(title = titleInput), (titleInput = '')"
+        >Change</ButtonComponent
+      >
     </div>
     <div class="input--field__button">
       <InputComponent
@@ -16,7 +18,8 @@
         v-model="descriptionInput"
         type="text"
       />
-      <ButtonComponent @changeProp="description = descriptionInput"
+      <ButtonComponent
+        @changeProp="(description = descriptionInput), (descriptionInput = '')"
         >Change</ButtonComponent
       >
     </div>
@@ -38,9 +41,9 @@ export default defineComponent({
   },
   data: () => ({
     title: "Title",
-    titleInput: "Title",
+    titleInput: "",
     description: "Description",
-    descriptionInput: "Description",
+    descriptionInput: "",
     placeholderTitle: "Update title...",
     placeholderDescription: "Update description...",
   }),
