@@ -5,6 +5,7 @@
       :placeholder="placeholder"
       v-model="titleInput"
       type="text"
+      v-focus
     />
     <ButtonComponent @changeProp="title = titleInput">Change</ButtonComponent>
   </div>
@@ -24,5 +25,12 @@ export default defineComponent({
     titleInput: "Title",
     placeholder: "Update title...",
   }),
+  directives: {
+    focus: {
+      mounted: (el) => {
+        el.focus();
+      },
+    },
+  },
 });
 </script>
