@@ -1,8 +1,12 @@
 <template>
-  <div>
+  <div class="wrapper">
     <TitleWithDescription :title="title" :description="description" />
-    <InputAlone :placeholder="placeholderTitle" v-model="title" type="text" />
-    <InputAlone
+    <InputComponent
+      :placeholder="placeholderTitle"
+      v-model="title"
+      type="text"
+    />
+    <InputComponent
       :placeholder="placeholderDescription"
       v-model="description"
       type="text"
@@ -12,12 +16,12 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import InputAlone from "@/components/Reusable/InputAlone.vue";
+import InputComponent from "@/components/Reusable/InputComponent.vue";
 import TitleWithDescription from "../Reusable/TitleWithDescription.vue";
 
 export default defineComponent({
   name: "TaskTwoSecond",
-  components: { InputAlone, TitleWithDescription },
+  components: { InputComponent, TitleWithDescription },
   data: () => ({
     title: "Title",
     description: "Description",

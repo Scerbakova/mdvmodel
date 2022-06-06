@@ -1,5 +1,7 @@
 <template>
-  <button @click="$emit('changeProp')">Toggle</button>
+  <button class="button" @click="$emit('changeProp')">
+    <slot></slot>
+  </button>
 </template>
 
 <script lang="ts">
@@ -7,6 +9,8 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   emits: ["changeProp"],
-  name: "ToggleButton",
+  name: "ButtonComponent",
 });
 </script>
+
+<style lang="scss"></style>

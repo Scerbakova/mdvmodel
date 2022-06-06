@@ -1,21 +1,20 @@
 <template>
-  <div>
-    <TitleComponent :title="title"
-      ><InputAlone :placeholder="placeholder" v-model="title" type="text" />
-    </TitleComponent>
+  <div class="wrapper">
+    <TitleComponent :title="title" />
+    <InputComponent :placeholder="placeholder" v-model="title" type="text" />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 import TitleComponent from "../Reusable/TitleComponent.vue";
-import InputAlone from "../Reusable/InputAlone.vue";
+import InputComponent from "../Reusable/InputComponent.vue";
 
 export default defineComponent({
   name: "TaskOneSecond",
   components: {
     TitleComponent,
-    InputAlone,
+    InputComponent,
   },
   data: () => ({
     title: "Title",

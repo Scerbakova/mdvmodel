@@ -1,29 +1,40 @@
 <template>
-  <div>
+  <div class="wrapper">
     <TitleWithDescription :title="title" :description="description" />
-    <InputWithButton
-      :placeholder="placeholderTitle"
-      v-model="titleInput"
-      type="text"
-      @changeProp="title = titleInput"
-    />
-    <InputWithButton
-      :placeholder="placeholderDescription"
-      v-model="descriptionInput"
-      type="text"
-      @changeProp="description = descriptionInput"
-    />
+    <div class="input--field__button">
+      <InputComponent
+        :placeholder="placeholderTitle"
+        v-model="titleInput"
+        type="text"
+      />
+      <ButtonComponent @changeProp="title = titleInput">Change</ButtonComponent>
+    </div>
+    <div class="input--field__button">
+      <InputComponent
+        :placeholder="placeholderDescription"
+        v-model="descriptionInput"
+        type="text"
+      />
+      <ButtonComponent @changeProp="description = descriptionInput"
+        >Change</ButtonComponent
+      >
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import InputWithButton from "@/components/Reusable/InputWithButton.vue";
 import TitleWithDescription from "../Reusable/TitleWithDescription.vue";
+import ButtonComponent from "../Reusable/ButtonComponent.vue";
+import InputComponent from "../Reusable/InputComponent.vue";
 
 export default defineComponent({
   name: "TaskTwoFirst",
-  components: { InputWithButton, TitleWithDescription },
+  components: {
+    TitleWithDescription,
+    ButtonComponent,
+    InputComponent,
+  },
   data: () => ({
     title: "Title",
     titleInput: "Title",

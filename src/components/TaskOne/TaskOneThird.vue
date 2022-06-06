@@ -1,25 +1,27 @@
 <template>
-  <div>
-    <BoxComponent :color="color"
-      ><InputWithButton
-        :placeholder="placeholder"
-        v-model="colorInput"
-        type="text"
-        @changeProp="color = colorInput"
-    /></BoxComponent>
+  <div class="wrapper">
+    <BoxComponent :color="color" />
+    <InputComponent
+      :placeholder="placeholder"
+      v-model="colorInput"
+      type="text"
+    />
+    <ButtonComponent @changeProp="color = colorInput">Change</ButtonComponent>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import InputWithButton from "@/components/Reusable/InputWithButton.vue";
 import BoxComponent from "@/components/Reusable/BoxComponent.vue";
+import ButtonComponent from "../Reusable/ButtonComponent.vue";
+import InputComponent from "../Reusable/InputComponent.vue";
 
 export default defineComponent({
   name: "TaskOneThird",
   components: {
-    InputWithButton,
     BoxComponent,
+    ButtonComponent,
+    InputComponent,
   },
   data: () => ({
     color: "Blue",

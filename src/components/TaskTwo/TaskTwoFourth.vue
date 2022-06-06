@@ -1,23 +1,23 @@
 <template>
-  <div>
-    <BoxComponent :color="color" :boxClass="boxClass">
-      <p>Toggle Square visibility on checkbox click</p>
-      <InputAlone type="checkbox" @changeProp="changeProp" />
-      <!-- <ToggleButton @changeProp="changeProp" /> -->
-    </BoxComponent>
+  <div class="wrapper">
+    <p class="instruction">Toggle Square visibility on checkbox click</p>
+    <InputComponent type="checkbox" @changeProp="changeProp" />
+    <div class="box__container">
+      <BoxComponent :color="color" :boxClass="boxClass" />
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 import BoxComponent from "@/components/Reusable/BoxComponent.vue";
-import InputAlone from "../Reusable/InputAlone.vue";
+import InputComponent from "../Reusable/InputComponent.vue";
 
 export default defineComponent({
   name: "TaskTwoFourth",
   components: {
     BoxComponent,
-    InputAlone,
+    InputComponent,
   },
   data: () => ({
     color: "Orange",

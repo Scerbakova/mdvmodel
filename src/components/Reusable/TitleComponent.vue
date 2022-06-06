@@ -1,7 +1,6 @@
 <template>
-  <div class="title__component">
-    <h1>{{ title }}</h1>
-    <slot></slot>
+  <div>
+    <h1 class="title">{{ title }}</h1>
   </div>
 </template>
 
@@ -10,11 +9,6 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "TitleComponent",
-  props: {
-    title: {
-      type: String,
-      default: "Title",
-    },
-  },
+  props: ["title"],
 });
 </script>

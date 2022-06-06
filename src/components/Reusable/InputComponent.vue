@@ -20,16 +20,7 @@ export default defineComponent({
 
     return { handleInputChange };
   },
-  props: {
-    placeholder: {
-      type: String,
-      default: "",
-    },
-    modelValue: {
-      type: String,
-      default: "",
-    },
-  },
+  props: ["placeholder", "modelValue"],
 });
 </script>
 
