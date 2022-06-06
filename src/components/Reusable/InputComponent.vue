@@ -14,11 +14,10 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "InputAlone",
-  data: () => {
-    const handleInputChange = (event: Event) =>
-      (event.target as HTMLInputElement).value;
-
-    return { handleInputChange };
+  methods: {
+    handleInputChange(event: Event) {
+      return (event.target as HTMLInputElement).value;
+    },
   },
   props: ["placeholder", "modelValue"],
 });
